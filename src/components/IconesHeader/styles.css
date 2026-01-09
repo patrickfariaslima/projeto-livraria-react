@@ -1,0 +1,10 @@
+.icones {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+.icone {
+  width: 25px;
+}
