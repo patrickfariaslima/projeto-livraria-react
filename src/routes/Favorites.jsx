@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Pesquisa from '../components/Pesquisa';
+import Search from '../components/Search/Search';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -7,12 +7,12 @@ const AppContainer = styled.div`
   background-image: linear-gradient(90deg, #002f52 35%, #326589 100%);
 `;
 
-function Favoritos() {
+function Favorites() {
   return (
     <AppContainer>
-      <Pesquisa />
+      <Search />
     </AppContainer>
   );
 }
 
-export default Favoritos;
+export default Favorites;

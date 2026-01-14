@@ -15,7 +15,7 @@ const Icones = styled.ul`
 
 const icones = [perfil, sacola];
 
-export default function IconesHeader() {
+export default function HeaderIcons() {
   return (
     <Icones>
       {icones.map((icone) => (

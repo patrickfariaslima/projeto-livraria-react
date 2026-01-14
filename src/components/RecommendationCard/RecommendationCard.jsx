@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Titulo } from '../Titulo';
+import { Title } from '../Title/Title';
 
 const Card = styled.div`
   align-items: center;
@@ -14,7 +14,7 @@ const Card = styled.div`
   width: 100%;
 `;
 
-const Botao = styled.button`
+const Button = styled.button`
   background-color: #eb9b00;
   color: #fff;
   padding: 10px 0px;
@@ -29,34 +29,34 @@ const Botao = styled.button`
   }
 `;
 
-const Descricao = styled.p`
+const Description = styled.p`
   max-width: 300px;
 `;
 
-const Subtitulo = styled.h4`
+const Subtitle = styled.h4`
   color: #002f52;
   font-size: 18px;
   font-weight: bold;
   margin: 15px 0;
 `;
 
-const ImgLivro = styled.img`
+const ImgBooks = styled.img`
   width: 150px;
 `;
 
-export default function CardRecomendacao({ titulo, subtitulo, descricao, img }) {
+export default function RecommendationCard({ titulo, subtitulo, descricao, img }) {
   return (
     <Card>
       <div>
-        <Titulo tamanhoFonte="16px" cor="#EB9B00" alinhamento="left">
+        <Title tamanhoFonte="16px" cor="#EB9B00" alinhamento="left">
           {titulo}
-        </Titulo>
-        <Subtitulo>{subtitulo}</Subtitulo>
-        <Descricao>{descricao}</Descricao>
+        </Title>
+        <Subtitle>{subtitulo}</Subtitle>
+        <Description>{descricao}</Description>
       </div>
       <div>
-        <ImgLivro src={img} alt="Capa do Livro" />
-        <Botao>Saiba mais</Botao>
+        <ImgBooks src={img} alt="Capa do Livro" />
+        <Button>Saiba mais</Button>
       </div>
     </Card>
   );

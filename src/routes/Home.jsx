@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Pesquisa from '../components/Pesquisa';
-import UltimosLancamentos from '../components/UltimosLancamentos';
+import Search from '../components/Search/Search';
+import LatestReleases from '../components/LatestReleases/LatestReleases';
 
 const AppContainer = styled.div`
   width: 100vw;
@@ -11,8 +11,8 @@ const AppContainer = styled.div`
 function Home() {
   return (
     <AppContainer>
-      <Pesquisa />
-      <UltimosLancamentos />
+      <Search />
+      <LatestReleases />
     </AppContainer>
   );
 }
