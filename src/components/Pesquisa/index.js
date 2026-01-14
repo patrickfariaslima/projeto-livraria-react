@@ -43,6 +43,7 @@ const Resultado = styled.div`
 
 export default function Pesquisa() {
   const [livrosPesquisados, setLivrosPesquisados] = useState([]);
+  
   return (
     <PesquisaContainer>
       <Titulo>Já sabe por onde começar?</Titulo>
