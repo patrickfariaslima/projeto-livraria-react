@@ -1,4 +1,4 @@
-import { livros } from './latestReleasesData';
+import { books } from './latestReleasesData';
 import styled from 'styled-components';
 import imagemLivro from '../../assets/images/livro2.png';
 import RecommendationCard from '../RecommendationCard/RecommendationCard';
@@ -26,14 +26,14 @@ export default function LatestReleases() {
         ÚLTIMOS LANÇAMENTOS
       </Title>
       <NewBooksContainer>
-        {livros.map((livro) => (
-          <img src={livro.src} alt="Capa do livro" />
+        {books.map((book) => (
+          <img src={book.src} alt="Capa do livro" />
         ))}
       </NewBooksContainer>
       <RecommendationCard
-        titulo="Talvez você se interesse por..."
-        subtitulo="Angular 11"
-        descricao="Construindo uma aplicação integrada com a plataforma Google."
+        title="Talvez você se interesse por..."
+        subtitle="Angular 11"
+        description="Construindo uma aplicação integrada com a plataforma Google."
         img={imagemLivro}
       />
     </LatestReleasesContainer>

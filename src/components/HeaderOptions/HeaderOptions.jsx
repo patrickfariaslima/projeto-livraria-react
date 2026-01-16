@@ -17,12 +17,12 @@ const Options = styled.ul`
   display: flex;
 `;
 
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'];
+const textOptions = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'];
 
 export default function HeaderOptions() {
   return (
     <Options>
-      {textoOpcoes.map((texto) => (
+      {textOptions.map((texto) => (
         <Link to={`/${texto.toLowerCase()}`}>
           <Option>
             <p>{texto}</p>

@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import Input from '../Input/Input';
-import { useState } from 'react';
-import { livros } from './searchData';
+import { useEffect, useState } from 'react';
+import getBooks from '../../services/booksService';
+import { FavoriteService } from '../../services/favoriteService';
+import bookImage from '../../assets/images/livro.png';
 
 const SearchContainer = styled.section`
   color: #fff;
@@ -42,24 +44,39 @@ const Result = styled.div`
 `;
 
 export default function Search() {
-  const [livrosPesquisados, setLivrosPesquisados] = useState([]);
-  
+  const [searchedBooks, setSearchedBooks] = useState([]);
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  async function fetchBooks() {
+    const booksAPI = await getBooks();
+    setBooks(booksAPI);
+  }
+
+  async function insertFavorite(id) {
+    await FavoriteService.postFavorite(id);
+    alert(`Livro de id ${id} adicionado aos favoritos!`);
+  }
+
   return (
     <SearchContainer>
       <Title>Já sabe por onde começar?</Title>
       <Subtitle>Encontre seu livro em nossa estante</Subtitle>
       <Input
         placeholder="Escreva sua próxima leitura"
-        onBlur={(evento) => {
-          const textoDigitado = evento.target.value;
-          const resultadoPesquisa = livros.filter((livro) => livro.nome.includes(textoDigitado));
-          setLivrosPesquisados(resultadoPesquisa);
+        onBlur={(event) => {
+          const textTyped = event.target.value;
+          const searchResult = books.filter((book) => book.nome.includes(textTyped));
+          setSearchedBooks(searchResult);
         }}
       />
-      {livrosPesquisados.map((livro) => (
-        <Result>
-          <img src={livro.src} alt="Capa do livro" />
-          <p>{livro.nome}</p>
+      {searchedBooks.map((book) => (
+        <Result onClick={() => insertFavorite(book.id)}>
+          <img src={bookImage} alt="Capa do livro" />
+          <p>{book.nome}</p>
         </Result>
       ))}
     </SearchContainer>

@@ -44,15 +44,15 @@ const ImgBooks = styled.img`
   width: 150px;
 `;
 
-export default function RecommendationCard({ titulo, subtitulo, descricao, img }) {
+export default function RecommendationCard({ title, subtitle, description, img }) {
   return (
     <Card>
       <div>
         <Title tamanhoFonte="16px" cor="#EB9B00" alinhamento="left">
-          {titulo}
+          {title}
         </Title>
-        <Subtitle>{subtitulo}</Subtitle>
-        <Description>{descricao}</Description>
+        <Subtitle>{subtitle}</Subtitle>
+        <Description>{description}</Description>
       </div>
       <div>
         <ImgBooks src={img} alt="Capa do Livro" />

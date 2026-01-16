@@ -1,6 +1,6 @@
 import livro from '../../assets/images/livro.png';
 
-export const livros = [
+export const books = [
   { nome: 'Liderança em Design', src: livro, id: 1 },
   { nome: 'Javascript Assertivo', src: livro, id: 2 },
   { nome: 'Cangaceiro JavaScript', src: livro, id: 3 },
